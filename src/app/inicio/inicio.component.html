@@ -1,0 +1,85 @@
+<h1>Registro de Usuario</h1>
+
+<form [formGroup]= "formulario" >
+
+    <div class="form-group">
+        <label>Rut:</label>
+        <input
+        type="text"
+        placeholder="Rut"
+        formControlName="rut"
+        required><br>
+
+        <small *ngIf= "formulario.rut?.errors?.required && formulario.rut.touched">
+            El rut es requerido
+        </small>
+
+        <label>Nombre:</label>
+        <input 
+        type="text"
+        placeholder="Nombre"
+        formControlName="nombre"
+        required><br>
+
+        <small *ngIf= "formulario.nombre?.errors?.required && formulario.nombre.touched">
+            El nombre es requerido
+        </small>
+
+        <label>Apellido:</label>
+        <input
+        type="text"
+        placeholder="Apellido"
+        formControlName="apellido"
+        required><br>
+
+        <small *ngIf= "formulario.apellido?.errors?.required && formulario.apellido.touched">
+            El apellido es requerido
+        </small>
+
+        <label>Correo:</label>
+        <input 
+        type="text"
+        placeholder="Correo"
+        formControlName="correo"
+        required><br>
+
+        <small *ngIf= "formulario.correo?.errors?.required && formulario.correo.touched">
+            El correo es requerido
+        </small>
+
+        <label>Password:</label>
+        <input
+        type="text"
+        placeholder="Password"
+        formControlName="password"
+        required><br>
+
+        <small *ngIf= "formulario.password?.errors?.required && formulario.password.touched">
+            La contraseña es requerida
+        </small>
+
+        
+
+        <div class="form-group">
+            <div>
+                <button 
+                class="btn btn-primary"
+                type="submit"
+                (click)="enviarDatos()"
+                [disabled]= "!formulario.valid"
+                >Enviar</button>
+            </div>
+
+        </div>
+        
+    </div>
+
+</form> <br>
+<div>
+    <button type="button" class="btn btn-primary btn-round"
+    routerLink='/'>Menu
+    </button>
+</div>
+<br><br>
+
+
